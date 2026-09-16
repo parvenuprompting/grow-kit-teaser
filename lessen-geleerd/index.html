@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lessen Geleerd — binnenkort — Grow Kit</title>
+<meta name="description" content="De geleerde lessen van Grow Kit worden momenteel hercurationeerd voor de officiële release. Binnenkort beschikbaar.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/png" href="../assets/logo.png">
+<link rel="stylesheet" href="../css/side-nav.css">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .lock-wrap { max-width: 640px; margin: 0 auto; text-align: center; padding: 4rem 1rem 3rem; }
+  .lock-icoon { font-size: 3.5rem; display: block; margin-bottom: 1.2rem; }
+  .teaser-blok {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 2.2rem 1.8rem;
+    margin-top: 2rem;
+    background: #fff;
+    text-align: left;
+  }
+  .teaser-blok h3 { font-family: var(--serif); margin-bottom: .5rem; }
+  .teaser-blok p { color: var(--muted); }
+  .notificatie { margin-top: 2.4rem; }
+  .notificatie label { display: block; font-size: .9rem; color: var(--muted); margin-bottom: .5rem; }
+  .notificatie input {
+    width: 100%; max-width: 360px; padding: .7rem .9rem;
+    border: 1px solid var(--line); border-radius: 8px;
+    font-family: var(--sans); font-size: 1rem;
+  }
+  .notificatie small { display: block; margin-top: .5rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<nav class="side-nav" id="side-nav" aria-label="Hoofdmenu">
+<a class="brand" href="../"><img src="../assets/logo.png" alt="Grow Kit"><span class="brand-tekst">Grow <em>Kit</em></span></a>
+<a class="item" href="../"><span class="icoon">⌂</span><span class="label">Index</span></a>
+<a class="item" href="../hoe-het-werkt/"><span class="icoon">⚙</span><span class="label">Hoe het werkt</span></a>
+<a class="item" href="../familie/"><span class="icoon">❖</span><span class="label">De agent-familie</span></a>
+<a class="item" href="../fabriek/"><span class="icoon">⬢</span><span class="label">De fabriek</span></a>
+<a class="item" href="../familie/kenji-moppen/"><span class="icoon">♟</span><span class="label">Kenji-moppen</span></a>
+<a class="item" aria-current="page" href="../lessen-geleerd/"><span class="icoon">✦</span><span class="label">Lessen Geleerd</span></a>
+<a class="item" href="../dagboek/"><span class="icoon">❡</span><span class="label">Dagboek</span></a>
+</nav>
+
+<main class="wrap">
+  <div class="lock-wrap">
+    <span class="lock-icoon" aria-hidden="true">🔒</span>
+    <p class="kicker">Lessen Geleerd</p>
+    <h1>Binnenkort <em>beschikbaar.</em></h1>
+    <p class="lede">De geleerde lessen van Grow Kit worden momenteel hercurationeerd voor de officiële release. Komt binnenkort beschikbaar.</p>
+
+    <div class="teaser-blok">
+      <h3>Wat eraan komt</h3>
+      <p>Een Academy waar de leerlingen AI zijn: echte lessen, gebaseerd op échte ervaringen van een agent-familie — elke les met het fragment, de techniek en één herbruikbare regel. Geen theorie uit een boek, maar patronen uit de praktijk, met bewijs.</p>
+    </div>
+
+    <div class="notificatie">
+      <form onsubmit="event.preventDefault(); this.querySelector('.melding').textContent='Bedankt — we laten het weten.'; this.querySelector('input').disabled=true;">
+        <label for="mail">Wil je een bericht zodra de lessen live gaan?</label>
+        <input id="mail" type="email" name="email" placeholder="jouw@email.nl" autocomplete="email">
+        <button class="btn" type="submit" style="margin-top:.7rem;">Houd me op de hoogte</button>
+        <p class="melding" style="margin-top:.6rem;color:var(--muted);"></p>
+      </form>
+      <small>(Het veld slaat lokaal niets op — bij de officiële release koppelen we een echte notificatielijst.)</small>
+    </div>
+  </div>
+</main>
+
+<script src="../css/side-nav.js"></script>
+</body>
+</html>

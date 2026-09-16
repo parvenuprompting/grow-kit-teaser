@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fase 0-signaalbord — Grow Kit</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .signaal-wrap { max-width: 720px; margin: 0 auto; padding: 2rem 1rem; }
+    .signaal-kaart { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .signaal-label { font-size: 0.95rem; color: #374151; margin-bottom: 0.5rem; }
+    .signaal-input { width: 100%; padding: 0.75rem; font-size: 1rem; border: 2px solid #d1d5db; border-radius: 8px; box-sizing: border-box; }
+    .signaal-knop { margin-top: 0.75rem; padding: 0.75rem 1.5rem; background: #2563eb; color: #fff; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; }
+    .signaal-knop:hover { background: #1d4ed8; }
+    .bevestiging { display: none; margin-top: 0.75rem; color: #15803d; font-weight: 600; }
+    .bevestiging.zichtbaar { display: block; }
+    .ingestie-lijst { list-style: none; padding: 0; }
+    .ingestie-lijst li { padding: 0.5rem 0; border-bottom: 1px solid #f3f4f6; }
+    .ingestie-lijst a { color: #2563eb; }
+  </style>
+</head>
+<body>
+<nav class="side-nav" id="side-nav" aria-label="Hoofdmenu">
+<a class="brand" href="../../"><img src="../../assets/logo.png" alt="Grow Kit"><span class="brand-tekst">Grow <em>Kit</em></span></a>
+<a class="item" href="../../"><span class="icoon">⌂</span><span class="label">Index</span></a>
+<a class="item" href="../../hoe-het-werkt/"><span class="icoon">⚙</span><span class="label">Hoe het werkt</span></a>
+<a class="item" href="../../familie/"><span class="icoon">❖</span><span class="label">De agent-familie</span></a>
+<a class="item" aria-current="page" href="../../fabriek/"><span class="icoon">⬢</span><span class="label">De fabriek</span></a>
+<a class="item" href="../../familie/kenji-moppen/"><span class="icoon">♟</span><span class="label">Kenji-moppen</span></a>
+<a class="item" href="../../dagboek/"><span class="icoon">❡</span><span class="label">Dagboek</span></a>
+</nav>
+  <div class="signaal-wrap">
+    <h1>Phase 0-signaalbord</h1>
+    <p>Hier log je in één regel wat je met Grow Kit doet. Geen account, geen wachtwoord — alleen jouw taak. Dit is hoe wij leren wat het eerste harnas in het echt doet.</p>
+
+    <div class="signaal-kaart">
+      <p class="signaal-label">Ik gebruik dit voor…</p>
+      <form id="signaal-form">
+        <input id="gebruik-input" class="signaal-input" type="text" placeholder="bijv. mijn weekplanning, dag 1" maxlength="200">
+        <button type="submit" class="signaal-knop">Verstuur</button>
+      </form>
+      <p id="bevestiging" class="bevestiging">Dank je — je signaal staat genoteerd.</p>
+    </div>
+
+    <div class="signaal-kaart">
+      <p class="signaal-label">Start met Grow Kit:</p>
+      <ul class="ingestie-lijst">
+        <li><a href="https://parvenuprompting.github.io/grow-kit-site/">De site: grow-kit-site</a> — start hier (Index, Hoe-het-werkt, Lessen Geleerd)</li>
+        <li><a href="https://github.com/parvenuprompting/Grow-Kit">GitHub: parvenuprompting/Grow-Kit</a> — de installatie (README, één klik)</li>
+        <li><a href="https://x.com/GrowKitHarnas">X: @GrowKitHarnas</a> — nieuws en antwoorden</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var KEY = 'fase0_signalen';
+      var storage = null;
+      try { storage = window.localStorage; } catch (e) { storage = null; }
+
+      function lees() {
+        if (!storage) return [];
+        try { return JSON.parse(storage.getItem(KEY)) || []; } catch (e) { return []; }
+      }
+
+      var input = document.getElementById('gebruik-input');
+      var form = document.getElementById('signaal-form');
+      var bevestiging = document.getElementById('bevestiging');
+
+      form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var tekst = input.value.trim();
+        if (!tekst) return;
+        var lijst = lees();
+        lijst.push({
+          gebruik: tekst,
+          bron: 'fabriek-bord',
+          ts: new Date().toISOString()
+        });
+        if (storage) storage.setItem(KEY, JSON.stringify(lijst));
+        input.value = '';
+        bevestiging.classList.add('zichtbaar');
+        bevestiging.textContent = 'Dank je — je signaal staat genoteerd.';
+      });
+    })();
+  </script>
+</body>
+</html>

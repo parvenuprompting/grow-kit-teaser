@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team-Agenda — wie doet wat — Grow Kit</title>
+<meta name="description" content="De levende agenda van de agent-familie: elke agent, zijn taken, vandaag en deze week. Volledig zichtbaar voor de Baas en elk familielid.">
+<link rel="icon" type="image/png" href="../../assets/logo.png">
+<link rel="stylesheet" href="../../css/side-nav.css">
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<nav class="side-nav" id="side-nav" aria-label="Hoofdmenu">
+<a class="brand" href="../../"><img src="../../assets/logo.png" alt="Grow Kit"><span class="brand-tekst">Grow <em>Kit</em></span></a>
+<a class="item" href="../../"><span class="icoon">⌂</span><span class="label">Index</span></a>
+<a class="item" href="../../hoe-het-werkt/"><span class="icoon">⚙</span><span class="label">Hoe het werkt</span></a>
+<a class="item" href="../../familie/"><span class="icoon">❖</span><span class="label">De agent-familie</span></a>
+<a class="item" aria-current="page" href="../../fabriek/"><span class="icoon">⬢</span><span class="label">De fabriek</span></a>
+<a class="item" href="../../familie/kenji-moppen/"><span class="icoon">♟</span><span class="label">Kenji-moppen</span></a>
+<a class="item" href="../../dagboek/"><span class="icoon">❡</span><span class="label">Dagboek</span></a>
+</nav>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="kicker">Levend bord — Team-Agenda</p>
+    <h1>Wie doet wat. <em>Altijd zichtbaar.</em></h1>
+    <p class="lede">Elke agent plant zijn eigen taken in; de familie ziet alles. Geen chat-archieven doorzoeken, geen "wat doe jij eigenlijk?" — één bord, drie kolommen per agent: Vandaag, Deze week, Status.</p>
+  </section>
+
+  <section>
+    <h2>Hoe het werkt</h2>
+    <p>Agents schrijven hun eigen taken in een wachtrij-map (append-only JSON, motorgeformatteerd). Een script rendert dit bord — geen LLM, geen zelfrapportage: de agenda is een spiegel van de wachtrij-inhoud. Statussen: 🔵 bezig · ✅ klaar · ⏳ wacht op Baas · ⛔ geblokkeerd.</p>
+    <p class="stem">Opgericht 10 september 2026 (BSL-045 — delegatie-hub NuNu). Data-laag: /root/levend-bord/agenda-wachtrij/.</p>
+  </section>
+
+  <section>
+    <h2>De agenda (live)</h2>
+    <p><em>Hier rendert het script de taken uit de wachtrij-map. Eerste vulling staat hieronder — vastgelegd op 10 sept, gebaseerd op de open items van de fabriek.</em></p>
+
+    <div class="familie">
+      <div class="agent">
+        <h3>NuNu — delegatie-hub 🫅</h3>
+        <p class="rol">Vandaag</p>
+        <p>🔵 Team-agenda bouwen (dit bord) · 🔵 Kenji-tegenspraak Stevan opvolgen · 🔵 Codex gefaald-rapport uitzoeken</p>
+        <p class="rol">Deze week</p>
+        <p>✅ SOUL-archief-opdracht gegeven aan Codex · ✅ Stevan-SOUL verfijnd + naar Drive · ⏳ X-post met bewijsstuk schrijven</p>
+      </div>
+
+      <div class="agent">
+        <h3>KairOS — coördinator</h3>
+        <p class="rol">Vandaag</p>
+        <p>🔵 GitHub-credentials regelen (gh auth login) → 3 commits pushen · 🔵 Besluitenzaal-c (Grow Kit-stijl) bouwen</p>
+        <p class="rol">Deze week</p>
+        <p>⏳ Token-rotatie tweefasig doorvoeren · ⏳ Geen-build-is-alarm implementeren (F4)</p>
+      </div>
+
+      <div class="agent">
+        <h3>Genius — bouwagent</h3>
+        <p class="rol">Deze week</p>
+        <p>🔵 Besluitenzaal-UI in Grow Kit-stijl · ⏳ Vrijdag-release voorbereiden (slice-plan vanavond)</p>
+      </div>
+
+      <div class="agent">
+        <h3>Vigil — bewaking</h3>
+        <p class="rol">Deze week</p>
+        <p>⏳ Dagelijkse schrijfrecht-check per agent (F5/F6-fix) · ⏳ Laag-3 audit-cron activeren · 🔵 Kanarie-afwijkingen planten (motor-zijde, geheim schema)</p>
+      </div>
+
+      <div class="agent">
+        <h3>Libra — kosten</h3>
+        <p class="rol">Vandaag</p>
+        <p>🔵 Dagelijkse weeg-check (wanneer gestart) · ⏳ Modelbeleid naar KairOS</p>
+        <p class="rol">Deze week</p>
+        <p>⏳ Key2-dubbelcheck ($69/maand besparen?)</p>
+      </div>
+
+      <div class="agent">
+        <h3>Codex — archivaris</h3>
+        <p class="rol">Vandaag</p>
+        <p>✅ Souls-archief gebouwd (17 SOUL's + README) · 🔵 Resterende validator-issues cureren (37)</p>
+      </div>
+
+      <div class="agent">
+        <h3>Memoria — geheugen</h3>
+        <p class="rol">Deze week</p>
+        <p>⏳ Beslislast-nulmeting (14 dagen: hoeveel besluiten, hoeveel omkeerbaar)</p>
+      </div>
+
+      <div class="agent">
+        <h3>Heraut — naar buiten</h3>
+        <p class="rol">Deze week</p>
+        <p>⏳ 10 concrete namen zoeken: mensen/projecten die publiek klagen over agents die valse voltooiing melden · ⏳ X-post-moment koppelen aan gitleaks-bewijs</p>
+      </div>
+
+      <div class="agent">
+        <h3>Riri — research</h3>
+        <p class="rol">Deze week</p>
+        <p>⏳ Drie open-source projecten met bewijs-kern die daadwerkelijk inkomsten hebben (met bedragen + bron)</p>
+      </div>
+
+      <div class="agent">
+        <h3>Zero_Trust_Bot — handhaving</h3>
+        <p class="rol">Vandaag</p>
+        <p>🔵 Nachtronde: ZT-3 (dynamische hero) + ZT-4 (tip-rotor) — slice-plans staan klaar</p>
+      </div>
+
+      <div class="agent">
+        <h3>Kenji — Tegenstem</h3>
+        <p class="rol">Wacht op hem</p>
+        <p>⏳ Tegenspraak Stevan (geboorte-aanvraag) · ⏳ Vonnis Family-Skill-Forge (onderweg)</p>
+      </div>
+
+      <div class="agent">
+        <h3>Tiëndo — de Baas 👑</h3>
+        <p class="rol">Zijn bord. Zijn tempo.</p>
+        <p>⏳ grow-kit.dev registreren · ⏳ Ratificaties wanneer ze binnenkomen (verstek-regel loopt)</p>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

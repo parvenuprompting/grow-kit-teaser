@@ -1,0 +1,242 @@
+/* Grow Kit — editorial monochrome, Fraunces + Inter (self-hosted, SIL OFL) */
+
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/fraunces-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/fraunces-400-italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/inter-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/inter-600.woff2') format('woff2');
+}
+
+:root {
+  --ink: #16130f;
+  --paper: #faf8f4;
+  --muted: #6f675c;
+  --line: #e3ddd2;
+  --accent: #16130f;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+/* ── header ── */
+header {
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+}
+.nav {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+}
+.brand {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.brand em { font-style: italic; font-weight: 400; }
+nav ul {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 15px;
+}
+nav a:hover, nav a[aria-current] { color: var(--ink); }
+
+/* ── hero ── */
+.hero { padding: 96px 0 72px; }
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(40px, 7vw, 68px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 14em;
+}
+.hero h1 em { font-style: italic; }
+.hero p.lede {
+  margin-top: 24px;
+  font-size: 20px;
+  color: var(--muted);
+  max-width: 34em;
+}
+.btn {
+  display: inline-block;
+  margin-top: 36px;
+  padding: 14px 28px;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 3px;
+}
+.btn:hover { opacity: 0.85; }
+.btn.ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  margin-left: 12px;
+}
+
+/* ── sections ── */
+section { padding: 64px 0; border-top: 1px solid var(--line); }
+section:first-of-type { border-top: 0; }
+.kicker {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 34px;
+  letter-spacing: -0.015em;
+  margin-bottom: 20px;
+}
+
+/* wetten */
+.wetten { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+.wet {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 28px 24px;
+  background: #fff;
+}
+.wet .nr {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--muted);
+}
+.wet h3 { font-family: var(--serif); font-weight: 400; font-size: 21px; margin: 10px 0 8px; }
+.wet p { font-size: 15px; color: var(--muted); }
+
+/* stappen */
+.stappen { margin-top: 32px; }
+.stap { display: grid; grid-template-columns: 64px 200px 1fr; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+.stap:last-child { border-bottom: 0; }
+.stap .nr { font-family: var(--serif); font-style: italic; font-size: 28px; color: var(--muted); }
+.stap h3 { font-family: var(--serif); font-weight: 400; font-size: 21px; }
+.stap p { font-size: 15px; color: var(--muted); }
+
+/* familie */
+.familie { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; margin-top: 32px; }
+.agent {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 24px;
+  background: #fff;
+}
+.agent h3 { font-family: var(--serif); font-weight: 600; font-size: 20px; }
+.agent .rol { font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 6px 0 12px; }
+.agent p { font-size: 15px; color: var(--muted); }
+.agent .stem { margin-top: 12px; font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--ink); }
+
+/* install */
+pre {
+  background: var(--ink);
+  color: #e8e2d6;
+  padding: 24px 28px;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-top: 24px;
+}
+pre code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; }
+
+/* footer */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 0 64px;
+  color: var(--muted);
+  font-size: 14px;
+}
+footer a { color: var(--muted); }
+footer a:hover { color: var(--ink); }
+
+@media (max-width: 760px) {
+  .wetten { grid-template-columns: 1fr; }
+  .stap { grid-template-columns: 48px 1fr; }
+  .stap p { grid-column: 2; }
+  nav ul { gap: 16px; }
+}
+
+/* ── logo ── */
+.brand-logo { height: 26px; width: auto; vertical-align: -7px; margin-right: 10px; border-radius: 5px; }
+.hero-logo { height: 72px; width: auto; border-radius: 12px; margin-bottom: 28px; }
+
+/* ── install-blok met kopieerknop ── */
+.install { position: relative; }
+.copy-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #faf8f4;
+  color: var(--ink);
+  border: 0;
+  border-radius: 3px;
+  padding: 8px 14px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.copy-btn:hover { opacity: 0.85; }
+.copy-btn.ok { background: #2e7d32; color: #fff; }
+
+
+/* ── Dagboek ── */
+.dag-entry { max-width: 720px; margin: 0 auto 3.5rem; }
+.dag-entry h2 { font-family: var(--serif); font-weight: 400; font-size: 28px; margin-bottom: 4px; }
+.dag-meta { font-size: 14px; color: var(--muted); margin-bottom: 16px; }
+.dag-meta .auteur { color: var(--accent); font-weight: 600; }
+.dag-entry p { margin-bottom: 1rem; color: var(--ink); }
+.dag-entry blockquote { border-left: 3px solid var(--accent); padding-left: 1rem; margin: 1.2rem 0; font-style: italic; color: var(--muted); }
+.dag-lijst { list-style: none; padding: 0; margin: 1.2rem 0; }
+.dag-lijst li { padding-left: 1.4rem; position: relative; margin-bottom: 0.5rem; }
+.dag-lijst li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
